@@ -3,7 +3,7 @@ var firebase = require("firebase");
 // Initialize the app with a service account, granting admin privileges
 firebase.initializeApp({
   databaseURL: "https://lots2048.firebaseio.com/",
-  serviceAccount: "server/lots2048key.json"
+  serviceAccount: "./server/lots2048key.json"
 });
 
 // As an admin, the app has access to read and write all data, regardless of
@@ -12,6 +12,9 @@ var db = firebase.database();
 
 var gameRef = db.ref('gameState');
 var moveRef = db.ref('moves');
+
+moveRef.set({});
+gameRef.set({});
 
 gameRef.once("value", function(snapshot) {
   console.log(snapshot.val());
