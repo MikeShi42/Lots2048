@@ -32,4 +32,4 @@ var LocalStorageManager = require('./js/LocalStorageManager');
 var inputManager = new InputManager(moveRef);
 var actuator = new Actuator(gameRef);
 var storageManager = new LocalStorageManager();
-new GameManager(6, inputManager, actuator, storageManager);
+new GameManager(5, inputManager, actuator, storageManager);
